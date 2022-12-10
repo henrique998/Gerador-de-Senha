@@ -6,13 +6,68 @@
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <script type="module" defer src="/src/main.ts"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600&display=swap" rel="stylesheet">
 
-  <title>Vite + TS</title>
+  <script type="module" defer src="/src/main.ts"></script>
+  <script defer src="https://unpkg.com/phosphor-icons"></script>
+
+  <title>Gerador de Senha</title>
 </head>
 
 <body>
-  <main></main>
+  <main>
+    <div class="container">
+      <div class="password-container">
+        <input data-element="password-result" type="text" readonly>
+
+        <button data-element="copy-to-clipboad-button">
+          <i data-element="copy-to-clipboad-icon" class="ph-copy-simple"></i>
+        </button>
+      </div>
+
+      <div class="inputs-container">
+        <div class="input-group">
+          <input data-element="password-option" type="checkbox" checked id="uppercase">
+
+          <label for="uppercase">Maiúsculas</label>
+        </div>
+
+        <div class="input-group">
+          <input data-element="password-option" type="checkbox" id="lowercase">
+
+          <label for="lowercase">Minúsculas</label>
+        </div>
+
+        <div class="input-group">
+          <input data-element="password-option" type="checkbox" id="numbers">
+
+          <label for="numbers">Números</label>
+        </div>
+
+        <div class="input-group">
+          <input data-element="password-option" type="checkbox" id="symbols">
+
+          <label for="symbols">Símbolos</label>
+        </div>
+      </div>
+
+      <div class="length-container">
+        <h2>Tamanho da Senha</h2>
+
+        <div>
+          <input data-element="slider" type="range" step="1" min="1" max="50">
+
+          <span data-element="pass-length">
+            50
+          </span>
+        </div>
+      </div>
+
+      <button data-element="create-button">Gerar Senha</button>
+    </div>
+  </main>
 </body>
 
 </html>
